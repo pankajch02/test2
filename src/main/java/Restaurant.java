@@ -68,4 +68,14 @@ public class Restaurant {
         return name;
     }
 
+    public int addItemToGetOrderValue(String itemName){
+
+        for(Item item: menu) {
+            if(item.getName().equals(itemName)){
+                totalOrderValue += item.getPrice();
+            }
+        }
+        return totalOrderValue;
+    }
+
 }
