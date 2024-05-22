@@ -66,4 +66,24 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    // TDD
+
+    // When adding items from menu,
+    // It should return the order value,
+    // it should take itemName as parameter,
+    // it should search the item in menu and provide item cost,
+    // it should show order value 0 when no item is selected
+    // it should increase the order value as more items are added from menu
+
+    @Test
+    public void when_adding_an_items_from_menu_it_should_return_order_value(){
+        int costWhenNothingIsAdded = restaurant.addItemToGetOrderValue("");
+        assertEquals(0,costWhenNothingIsAdded);
+
+        int costWhenOneItemIsAdded = restaurant.addItemToGetOrderValue("Vegetable lasagne");
+        assertEquals(269,costWhenOneItemIsAdded);
+
+        int costWhenAdditionalItemIsAdded = restaurant.addItemToGetOrderValue("Sweet corn soup");
+        assertEquals(388,costWhenAdditionalItemIsAdded);
+    }
 }
